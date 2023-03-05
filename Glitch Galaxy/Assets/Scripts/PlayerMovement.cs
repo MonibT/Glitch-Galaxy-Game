@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool isWalking;
     private float dirX = 0f;
+    private bool faceright = true;
 
 
     private enum MovementState { idle, Walk, jump, fall}
@@ -55,16 +56,23 @@ public class PlayerMovement : MonoBehaviour
         
         MovementState state;
 
-        if (dirX > 0f)
+        if (dirX > 0f || dirX < 0f )
         {
             state = MovementState.Walk;
-            spriteRenderer.flipX = false;
+
+            if (dirX > 0f && !faceright)
+            {
+
+                Flip();
+            }
+            else if (dirX < 0f && faceright)
+            {
+
+                Flip();
+            }
         }
-        else if (dirX < 0f)
-        {
-            state = MovementState.Walk;
-            spriteRenderer.flipX = true;
-        }
+
+        
 
         else
         {
@@ -80,6 +88,12 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.fall;
         }
         anim.SetInteger("state", (int)state);
+    }
+
+    private void Flip()
+    {
+        faceright = !faceright;
+        transform.Rotate(0f, 180f, 0f);
     }
 
 
