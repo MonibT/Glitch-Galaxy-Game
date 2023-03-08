@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
     }
     void Die ()
     {
+        Destroy(gameObject,0.5f);
         rb.bodyType = RigidbodyType2D.Static;
         coll.enabled = false;
         anim.SetTrigger("Die");

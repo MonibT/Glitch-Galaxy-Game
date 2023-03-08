@@ -29,9 +29,21 @@ public class StartSc : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }
+    public void Level6()
+    {
+        SceneManager.LoadScene(6);
+    }
     public void EndGame()
     {
         Application.Quit();
         
+    }
+    public void EndScene()
+    {
+        SceneManager.LoadScene(7);
+    }
+    public void ReplayLevels()
+    {
+        SceneManager.LoadScene(8);
     }
 }

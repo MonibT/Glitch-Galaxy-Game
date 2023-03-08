@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: a07960dee55baf741b710e514586f700
+  - enabled: 1
+    path: Assets/Scenes/ReplayLevels.unity
+    guid: ede8c68c2c6465948abfbf2bc27855d6
   m_configObjects: {}
